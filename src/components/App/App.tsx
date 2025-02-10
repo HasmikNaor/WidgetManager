@@ -116,7 +116,6 @@ function App() {
     api
       .updateWidget(pageName, id, data)
       .then(() => {
-        // updatePercentages(widgetData);
         close();
         getPageWidgets(pageName);
         getAllWidgets();
@@ -262,12 +261,14 @@ function App() {
   const handleEditBtnClick = (widget: IWidget) => {
     openPopup();
     setFormWidgetData(widget);
-    navigate(`/${pageName}/${widget.id}`);
     setFormBtnTxt("Edit");
   };
   const getRandomWidget = () => {
     const num = generateRandomNumber();
     const randomWidget = showRandomWidget(num, widgets);
+    if (randomWidget) {
+      navigate(`${pageName}/${randomWidget.id}`);
+    }
     setWidgetTorender(randomWidget);
   };
 
