@@ -1,0 +1,76 @@
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #1e1e1e; /* Dark background */
+  --text-color: #f5f5f5; /* Light text */
+  --border-color: #333; /* Subtle border */
+  --hover-color: #5aa5ff; /* Lighter blue on hover */
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
+}
+
+.header {
+  padding: 41px 0;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  &__btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    border: 1px solid rgba(84, 84, 84, 0.7);
+    cursor: pointer;
+    transition: background-color var(--transition-speed),
+      transform var(--transition-speed);
+    &:hover {
+      background-color: var(--hover-color);
+      transform: scale(1.05);
+    }
+  }
+}
+.header-dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  &__label {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-color);
+  }
+  &__select {
+    width: 200px;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    font-size: 14px;
+    background-color: #252525;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: border-color var(--transition-speed);
+    appearance: none;
+    &:hover {
+      border-color: var(--primary-color);
+    }
+    option:first-child {
+      font-weight: bold;
+      color: #ccc;
+      background-color: var(--secondary-color);
+    }
+  }
+  &__option {
+    padding: 10px;
+    background-color: #252525;
+    color: var(--text-color);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    padding-bottom: 32px;
+  }
+}

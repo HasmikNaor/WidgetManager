@@ -1,0 +1,29 @@
+.page-widgets {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__list {
+    // display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(282px, 282px));
+    // width: 100%;
+    width: 282px;
+    margin: auto;
+    gap: 20px 17px;
+  }
+  &__title {
+    color: white;
+  }
+  &__subtitle {
+    color: white;
+  }
+}
+@media screen and (max-width: 500px) {
+  .page-widgets {
+    width: 88.125%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
