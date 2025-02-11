@@ -1,3 +1,10 @@
 .App {
   background-color: #000;
+  height: 100vh;
+  &__err {
+    width: 100%;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+  }
 }

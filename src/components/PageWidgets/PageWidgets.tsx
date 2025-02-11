@@ -1,6 +1,5 @@
 import { IWidget } from "../../utils/interfaces";
 import Card from "../Card/Card";
-import { useEffect } from "react";
 interface IPageWidgets {
   widget: IWidget;
   currPage: string;

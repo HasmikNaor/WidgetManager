@@ -268,8 +268,8 @@ function App() {
     const randomWidget = showRandomWidget(num, widgets);
     if (randomWidget) {
       navigate(`${pageName}/${randomWidget.id}`);
+      setWidgetTorender(randomWidget);
     }
-    setWidgetTorender(randomWidget);
   };
 
   const openPopup = () => {
@@ -303,19 +303,27 @@ function App() {
         formBtnTxt={formBtnTxt}
         onInputChange={handleInputChange}
       />
+
       <Routes>
-        <Route
-          path={`/${pageName}/${widgetId || ""}`}
-          element={
-            <PageWidgets
-              widget={widgetToRender}
-              currPage={pageName}
-              onWidgetDelete={handleDelete}
-              onEditBtnClick={handleEditBtnClick}
-              key={window.location.pathname}
-            />
-          }
-        />
+        {widgetToRender.id ? (
+          <Route
+            path={`/${pageName}/${widgetId || ""}`}
+            element={
+              <PageWidgets
+                widget={widgetToRender}
+                currPage={pageName}
+                onWidgetDelete={handleDelete}
+                onEditBtnClick={handleEditBtnClick}
+                key={window.location.pathname}
+              />
+            }
+          />
+        ) : (
+          <Route
+            path={`/${pageName}/${widgetId || ""}`}
+            element={<p className="App__err">There is no Widget to display</p>}
+          />
+        )}
       </Routes>
     </div>
   );

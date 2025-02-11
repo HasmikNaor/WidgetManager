@@ -3,10 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  // height: 100vh;
   &__list {
-    // display: grid;
-    // grid-template-columns: repeat(auto-fit, minmax(282px, 282px));
-    // width: 100%;
     width: 282px;
     margin: auto;
     gap: 20px 17px;
